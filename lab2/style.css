@@ -1,0 +1,14 @@
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+h3 {
+  color: darkred;
+  font-size: 22px;
+}
+
+p.external {
+  color: navy;
+  font-weight: bold;
+}
