@@ -15,7 +15,7 @@ p {
 
 #main-title {
     color: crimson;
-    text-transform: uppercase;
+    
     text-align: center;
 }
 
@@ -35,18 +35,6 @@ div p {
 div > ul > li {
     background-color: lightcyan;
 }
-
-
-input[type="text"] {
-    border: 2px solid blue;
-}
-input[type="password"] {
-    border: 2px solid red;
-}
-input[type="email"] {
-    border: 2px solid green;
-}
-
 
 a:hover {
     color: orange;
