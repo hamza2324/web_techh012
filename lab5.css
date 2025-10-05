@@ -1,0 +1,66 @@
+
+h1, h2 {
+    color: darkblue;
+}
+p {
+    color: darkslategray;
+}
+
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+
+#main-title {
+    color: crimson;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+h2, p, li {
+    border: 1px solid lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+div p {
+    color: green;
+    font-style: italic;
+}
+
+div > ul > li {
+    background-color: lightcyan;
+}
+
+
+input[type="text"] {
+    border: 2px solid blue;
+}
+input[type="password"] {
+    border: 2px solid red;
+}
+input[type="email"] {
+    border: 2px solid green;
+}
+
+
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+ul li:first-child {
+    background-color: lightgreen;
+}
+ul li:last-child {
+    background-color: lightpink;
+}
+
+p::first-letter {
+    font-size: 24px;
+    color: purple;
+    font-weight: bold;
+}
