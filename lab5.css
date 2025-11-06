@@ -1,5 +1,5 @@
 
-h1, h2 {
+ h2 {
     color: darkblue;
 }
 p {
@@ -8,7 +8,7 @@ p {
 
 
 .highlight {
-    background-color: yellow;
+     background-color: yellow; */
     font-weight: bold;
 }
 
@@ -21,9 +21,9 @@ p {
 
 
 h2, p, li {
-    border: 1px solid lightgray;
+    border: 1px solid lightgray; 
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
 
@@ -33,7 +33,7 @@ div p {
 }
 
 div > ul > li {
-    background-color: lightcyan;
+    background-color: rgb(149, 206, 206);
 }
 
 a:hover {
@@ -44,11 +44,11 @@ ul li:first-child {
     background-color: lightgreen;
 }
 ul li:last-child {
-    background-color: lightpink;
+    background-color: rgb(211, 145, 155);
 }
 
 p::first-letter {
     font-size: 24px;
-    color: purple;
+    color: rgb(173, 121, 173);
     font-weight: bold;
 }
