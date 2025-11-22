@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab7
+    </title>
+</head>
+
+<body>
+
+    <h2>Experiment 7: JavaScript Fundamentals: Console Web Interactivity</h2>
+    <button onclick="task1()">Task 1: User Info</button><br>
+    <button onclick="task2()">Task 2: Arithmetic and Comparison</button>
+
+    <script>
+        function task1() {  
+            let name = prompt("Enter Name:");
+            let regID = prompt("Enter Registration no:");
+            alert("Name: " + name + "\nRegistration ID: " + regID);
+            console.log("Name:", name, "| Type:", typeof name);
+            console.log("Registration no:", regID, "| Type:", typeof regID);
+        }
+        function task2() {
+            let num1 = prompt("Enter first number:");
+            let num2 = prompt("Enter second number:");
+
+            num1 = Number(num1);
+            num2 = Number(num2);
+            let sum = num1 + num2;
+            let diff = num1 - num2;
+            let prod = num1 * num2;
+            let quot = num1 / num2;
+            let comp = num1 > num2;
+            alert(
+                "Results:\n" +
+                "Sum: " + sum + "\n" +
+                "Difference: " + diff + "\n" +
+                "Product: " + prod + "\n" +
+                "Quotient: " + quot + "\n" +
+                "Comparison of numbers" + comp
+            );
+            console.log("num1:", num1, "Type:", typeof num1);
+            console.log("num2:", num2, "Type:", typeof num2);
+            console.log("Sum:", sum);
+            console.log("Difference:", diff);
+            console.log("Product:", prod);
+            console.log("Quotient:", quot);
+            console.log("Comparison:", comp);
+        }
+    </script>
+
+</body>
+</html>

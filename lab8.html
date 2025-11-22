@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab 8</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f3ff;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background: #86b6f6;
+            margin: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+        .diamond {
+    width: 120px;
+    height: 120px;
+    background: #6ecb63;
+    transform: rotate(45deg);
+    margin: 20px;
+    transition: transform 1s ease;
+    cursor: pointer;
+}
+
+        .text-block {
+            padding: 15px;
+            background: #fff3cd;
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid #c9ad55;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Experiment 8: Creating an Interactive Webpage Using JavaScript Event Listeners</h1>
+<button onclick="changeBackground()">Change Background Color</button>
+<button onclick="increaseText()">Increase Text Size</button>
+<button onclick="resetAll()">Reset Page</button>
+<br><br>
+<div class="text-block" id="textBlock" onclick="changeText(this)">
+    Click me to change my text content!
+</div>
+<div class="box" onclick="changeColor(this)" onmouseover="growBox(this)" onmouseout="shrinkBox(this)"></div>
+<div class="box" onclick="moveBox(this)"></div>
+<div class="diamond" onclick="spinShape(this)"></div>
+<script>
+
+   
+    function changeBackground() {
+        document.body.style.background = 
+            "#" + Math.floor(Math.random() * 16777215).toString(16);
+    }
+    function increaseText() {
+        let el = document.getElementById("textBlock");
+        let size = window.getComputedStyle(el).fontSize;
+        el.style.fontSize = (parseInt(size) + 4) + "px";
+    }
+    function resetAll() {
+        location.reload();
+    }
+    function changeText(el) {
+        el.innerHTML = "Clicked ";
+        el.style.background = "#ffe6a7";
+    }
+    function changeColor(el) {
+        el.style.background = 
+            "#" + Math.floor(Math.random() * 16777215).toString(16);
+    }
+    function growBox(el) {
+        el.style.transform = "scale(1.2)";
+    }
+    function shrinkBox(el) {
+        el.style.transform = "scale(1)";
+    }
+    function moveBox(el) {
+        el.style.transform = "translateX(50px)";
+    }
+
+   function spinShape(el) {
+    el.style.transform = "rotate(360deg)";
+    setTimeout(() => {
+        el.style.transform = "rotate(0deg)";
+    }, 800);
+}
+</script>
+
+</body>
+</html>
