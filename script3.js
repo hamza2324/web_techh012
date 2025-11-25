@@ -107,5 +107,5 @@ function showResult() {
         `${score} / ${questions.length}`;
 
     document.getElementById("finalmessage").textContent =
-        score >= 4 ? "Great Job!" : "Try Again!";
+        score >= 4 ? "well done!" : "Try Again";
 }
