@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lab 9</title>
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:#f2f2f2;
+padding:50px;
+}
+.panel{
+background:white;
+padding:30px;
+width:300px;
+margin:auto;
+border-radius:10px;
+}
+button,select{
+padding:10px;
+margin:10px;
+width:200px;
+}
+.box{
+width:100px;
+height:100px;
+background:blue;
+margin:20px auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="panel">
+<h2>Lab 9(control fn) </h2>
+
+<button onclick="handleAction(changeColor)">Change Color</button>
+<button onclick="handleAction(changeSize)">Change Size</button>
+
+<select onchange="modeSelect(this.value)">
+<option value="">Select Mode</option>
+<option value="reset">Reset</option>
+<option value="hide">Hide</option>
+<option value="show">Show</option>
+</select>
+
+<div class="box" id="box"></div>
+</div>
+
+<script>
+function handleAction(callback){
+callback()
+}
+
+function changeColor(){
+document.getElementById("box").style.background="red"
+}
+
+function changeSize(){
+document.getElementById("box").style.transform="scale(1.5)"
+}
+
+function modeSelect(mode)
+{
+var box=document.getElementById("box")
+switch(mode){
+case "reset":
+box.style.background="blue"
+box.style.transform="scale(1)"
+box.style.display="block"
+break
+case "hide":
+box.style.display="none"
+break
+case "show":
+box.style.display="block"
+break
+}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Management</title>
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:30px;
+}
+input,button{
+padding:8px;
+margin:5px;
+}
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+background:white;
+}
+th,td{
+border:1px solid #ccc;
+padding:8px;
+text-align:center;
+}
+.top{
+background:#c8f7c5;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Student Management System</h2>
+
+<input id="name" placeholder="Name">
+<input id="roll" placeholder="Roll No">
+<input id="cgpa" placeholder="CGPA">
+<button onclick="addStudent()">Add</button>
+
+<br>
+
+<input id="search" placeholder="Search by Roll" onkeyup="searchStudent()">
+
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Roll</th>
+<th>CGPA</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="table"></tbody>
+</table>
+
+<script>
+let students=[]
+let editIndex=null
+
+function addStudent(){
+let n=name.value
+let r=roll.value
+let c=cgpa.value
+if(editIndex===null){
+students.push({name:n,roll:r,cgpa:c})
+}else{
+students[editIndex]={name:n,roll:r,cgpa:c}
+editIndex=null
+}
+clearInputs()
+display()
+}
+
+function deleteStudent(i){
+students.splice(i,1)
+display()
+}
+
+function editStudent(i){
+name.value=students[i].name
+roll.value=students[i].roll
+cgpa.value=students[i].cgpa
+editIndex=i
+}
+
+function display(){
+let t=""
+let max=Math.max(...students.map(s=>s.cgpa))
+students.forEach((s,i)=>{
+let cls=s.cgpa==max?"top":""
+t+=`<tr class="${cls}">
+<td>${s.name}</td>
+<td>${s.roll}</td>
+<td>${s.cgpa}</td>
+<td>
+<button onclick="editStudent(${i})">Edit</button>
+<button onclick="deleteStudent(${i})">Delete</button>
+</td>
+</tr>`
+})
+table.innerHTML=t
+}
+
+function clearInputs(){
+name.value=""
+roll.value=""
+cgpa.value=""
+}
+
+function searchStudent(){
+let v=search.value
+let rows=document.querySelectorAll("tbody tr")
+rows.forEach(r=>{
+r.style.display=r.children[1].innerText.includes(v)?"":"none"
+})
+}
+
+function sortCGPA(){
+students.sort((a,b)=>b.cgpa-a.cgpa)
+display()
+}
+</script>
+
+</body>
+</html>
