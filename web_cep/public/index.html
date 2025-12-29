@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Management & Team Task Division</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">TeamFlow</div>
+    <nav class="nav-links">
+      <a href="#projects-section">Projects</a>
+      <a href="#tasks-section">Tasks</a>
+      <a href="#about-section">About</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel" id="create-section">
+      <h2>Create New Project</h2>
+      <p class="subtitle">
+        Keep your semester teams organized. Add a project, list team members, and start assigning tasks.
+      </p>
+
+      <form id="project-form" class="form">
+        <div class="form-group">
+          <label for="project-name">Project Name <span>*</span></label>
+          <input type="text" id="project-name" placeholder="e.g. Online Library System" required />
+        </div>
+
+        <div class="form-group">
+          <label for="project-description">Description</label>
+          <textarea id="project-description" rows="3" placeholder="Short description of the project"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="project-members">Team Members (comma separated) <span>*</span></label>
+          <input type="text" id="project-members" placeholder="Ali, Sara, Ahmed" required />
+        </div>
+
+        <button type="submit" class="btn primary">Create Project</button>
+        <p class="hint">Fields marked with <span>*</span> are required.</p>
+      </form>
+    </section>
+
+    <section class="panel" id="projects-section">
+      <h2>Your Projects</h2>
+      <p class="subtitle">Click a project to manage tasks and see team members.</p>
+      <div id="projects-list" class="card-list empty-state">
+        <p>No projects yet. Create one on the left!</p>
+      </div>
+    </section>
+
+    <section class="panel wide" id="tasks-section">
+      <div class="tasks-header">
+        <div>
+          <h2 id="tasks-project-title">Select a project</h2>
+          <p class="subtitle" id="tasks-project-subtitle">
+            Choose a project from the list to start adding tasks.
+          </p>
+        </div>
+        <div id="tasks-team-members"></div>
+      </div>
+
+      <div class="tasks-layout">
+        <div class="task-column">
+          <h3>Add Task</h3>
+          <form id="task-form" class="form">
+            <div class="form-group">
+              <label for="task-title">Task Title <span>*</span></label>
+              <input type="text" id="task-title" placeholder="e.g. Design homepage" required />
+            </div>
+
+            <div class="form-group">
+              <label for="task-assignee">Assignee (team member) <span>*</span></label>
+              <input type="text" id="task-assignee" placeholder="e.g. Sara" required />
+            </div>
+
+            <div class="form-group">
+              <label for="task-due">Due Date</label>
+              <input type="date" id="task-due" />
+            </div>
+
+            <button type="submit" class="btn primary" id="add-task-btn" disabled>Add Task</button>
+            <p class="hint">You must select a project first.</p>
+          </form>
+        </div>
+
+        <div class="task-column">
+          <h3>Tasks by Status</h3>
+          <div class="task-columns-grid">
+            <div class="task-status-col">
+              <h4>To Do</h4>
+              <div id="tasks-todo" class="task-list"></div>
+            </div>
+            <div class="task-status-col">
+              <h4>In Progress</h4>
+              <div id="tasks-inprogress" class="task-list"></div>
+            </div>
+            <div class="task-status-col">
+              <h4>Done</h4>
+              <div id="tasks-done" class="task-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="about-section">
+      <h2>About This Project</h2>
+      <p>
+        This is a simple semester project for Web Technologies demonstrating
+        <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>Node.js (Express)</strong>.
+      </p>
+      <ul>
+        <li>Manage multiple projects and teams.</li>
+        <li>Assign tasks to specific team members.</li>
+        <li>Track task status: <em>To Do</em>, <em>In Progress</em>, <em>Done</em>.</li>
+        <li>Fully responsive layout for desktop, tablet, and mobile.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Project Management & Team Task Division &mdash; Web Technologies Semester Project</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

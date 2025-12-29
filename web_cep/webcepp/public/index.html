@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TeamFlow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">TeamFlow</div>
+  <nav>
+    <a href="#create">Create</a>
+    <a href="#projects">Projects</a>
+    <a href="#tasks">Tasks</a>
+  </nav>
+</header>
+
+<main class="container">
+
+<section id="create" class="panel">
+  <h2>Create Project</h2>
+  <form id="project-form">
+    <input id="project-name" placeholder="Project Name" required>
+    <textarea id="project-description" placeholder="Description"></textarea>
+    <input id="project-members" placeholder="Members (comma separated)" required>
+    <button>Create</button>
+  </form>
+</section>
+
+<section id="projects" class="panel">
+  <h2>Projects</h2>
+  <div id="projects-list"></div>
+</section>
+
+<section id="tasks" class="panel wide">
+  <h2 id="tasks-project-title">Select Project</h2>
+  <p id="tasks-project-subtitle"></p>
+  <div id="tasks-team-members"></div>
+
+  <form id="task-form">
+    <input id="task-title" placeholder="Task Title" required>
+    <input id="task-assignee" placeholder="Assignee" required>
+    <input id="task-due" type="date">
+    <button id="add-task-btn" disabled>Add Task</button>
+  </form>
+
+  <div class="task-columns">
+    <div>
+      <h3>To Do</h3>
+      <div id="tasks-todo"></div>
+    </div>
+    <div>
+      <h3>In Progress</h3>
+      <div id="tasks-inprogress"></div>
+    </div>
+    <div>
+      <h3>Done</h3>
+      <div id="tasks-done"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
